@@ -20,3 +20,11 @@ const db = myspl.createConnection({
     database: 'mahasiswa',
     port: 3309
 })
+
+db.connect(err => {
+    if (err) {
+        console.error('Gagal koneksi ke database' + err.stack);
+        return;
+    }
+    console.log('Berhasil koneksi ke database');
+});
